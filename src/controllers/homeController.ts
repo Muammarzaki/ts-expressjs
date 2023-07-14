@@ -1,13 +1,17 @@
-import { HttpMethod, Route } from "./routes.js";
+import { Router } from "express";
+import { Success } from "../types/dto";
 
+const homeRouter = Router();
 
-export const homeController: Route = {
-    base: "/",
-    sub:[
-        {
-            method: HttpMethod.GET,
-            path: "/",
-            handler: (req, res) => { }
-        }
-    ]
-}
+homeRouter.get("/", (req, res) => {
+    let response: Success<string> = {
+        data: "home",
+        status: "success",
+        status_code: 200,
+    }
+    res
+        .setHeader("Content-Type", "application/json")
+        .status(200)
+        .send(response)
+})
+export default homeRouter;

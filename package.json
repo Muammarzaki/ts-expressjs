@@ -2,7 +2,6 @@
   "name": "belajar-typescript-dasar",
   "version": "1.0.0",
   "main": "dist/App.js",
-  "type": "module",
   "directories": {
     "test": "test"
   },
